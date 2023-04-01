@@ -2,32 +2,28 @@ from typing import Union, List, Dict
 from .jobs import read
 
 
-def get_max_salary(path: str) -> int:
+def get_max_or_min_salary(path: str, setting: str) -> int:
     jobs = read(path)
     salaries = [
-        int(job["max_salary"]) for job in jobs if job["max_salary"].isdigit()
+        int(job[f"{setting}_salary"])
+        for job in jobs
+        if job[f"{setting}_salary"].isdigit()
     ]
 
-    max_salary = max(salaries) if salaries else 0
-    return max_salary
+    if salaries:
+        if setting == "max":
+            return max(salaries)
+        elif setting == "min":
+            return min(salaries)
+    return 0
+
+
+def get_max_salary(path: str) -> int:
+    return get_max_or_min_salary(path, "max")
 
 
 def get_min_salary(path: str) -> int:
-    """Get the minimum salary of all jobs
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The minimum salary paid out of all job opportunities
-    """
-    raise NotImplementedError
+    return get_max_or_min_salary(path, "min")
 
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:

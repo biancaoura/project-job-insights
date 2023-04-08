@@ -69,7 +69,7 @@ Run the app:
 flask run
 ```
 
-By default, the server is running at `http://127.0.0.1:5000`
+By default, the server runs at `http://127.0.0.1:5000`
 
 
 

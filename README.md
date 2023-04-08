@@ -44,19 +44,19 @@ Web app for job analyses developed with `Python` and `Flask`.
 
 1. Clone the repo
 ```
-$ git clone git@github.com:biancaoura/project-job-insights.git
+git clone git@github.com:biancaoura/project-job-insights.git
 ```
 2. Go to the repository
 ```
-$ cd project-job-insights
+cd project-job-insights
 ```
 3. Create a virtual environment and activate it
 ```
-$ python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 ```
 4. Install the dependencies inside the virtual environment
 ```
-$ python3 -m pip install -r dev-requirements.txt
+python3 -m pip install -r dev-requirements.txt
 ```
 
 
@@ -66,7 +66,7 @@ $ python3 -m pip install -r dev-requirements.txt
 
 Run the app:
 ```
-$ flask run
+flask run
 ```
 
 By default, the server is running at `http://127.0.0.1:5000`
